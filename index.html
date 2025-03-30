@@ -26,11 +26,12 @@
             overflow-x: hidden;
         }
 
-.message{
-  color: greenyellow;
-  border-start-end-radius: 50%;
-  box-shadow: 0 0 50px #FFD700;
-}
+        .message {
+            color: greenyellow;
+            border-start-end-radius: 50%;
+            box-shadow: 0 0 50px #FFD700;
+        }
+
         .moon {
             width: 150px;
             height: 150px;
@@ -40,8 +41,9 @@
             margin-bottom: 25px;
             position: relative;
         }
+        
         h1 {
-          box-shadow: 0 0 50px #FFD700
+            box-shadow: 0 0 50px #FFD700;
             font-size: 2.5rem;
             color: #FFD700;
             margin-bottom: 20px;
@@ -72,9 +74,11 @@
             transition: all 0.3s;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
-.btn{
-  box-shadow: 0 0 50px #FFD700
-}
+        
+        .btn {
+            box-shadow: 0 0 50px #FFD700;
+        }
+        
         .btn:hover {
             background: linear-gradient(135deg, #FFD700, #FFA500);
             color: #006400;
@@ -95,13 +99,11 @@
         }
 
         .copyright {
-        
-          
             margin-top: 40px;
             font-size: 1.1rem;
             color: rgba(255,255,255,0.7);
             display: flex;
-            box-shadow: 0 0 50px #FFD700
+            box-shadow: 0 0 50px #FFD700;
             align-items: center;
             justify-content: center;
         }
@@ -141,7 +143,7 @@
 </head>
 <body>
     <!-- ব্যাকগ্রাউন্ড অডিও (অটোপ্লে) -->
-    <audio id="eidAudio" autoplay loop>
+    <audio id="eidAudio" autoplay preload="auto">
         <source src="eid-special.mp3" type="audio/mpeg">
     </audio>
 
@@ -195,11 +197,16 @@
             return false;
         }
 
-        // অডিও অটোপ্লে (মোবাইল ফ্রেন্ডলি)
-        document.addEventListener('click', function() {
+        // পেজ লোড হওয়ার সাথে সাথে অডিও প্লে করার চেষ্টা করুন
+        window.addEventListener('load', function() {
             const audio = document.getElementById('eidAudio');
-            audio.play().catch(e => console.log('অডিও প্লে করতে সমস্যা:', e));
-        }, { once: true });
+            audio.play().catch(e => {
+                // যদি অটোপ্লে ব্লক করা হয়, তাহলে একটি বাটন ক্লিক ইভেন্ট লিসেনার যোগ করুন
+                document.body.addEventListener('click', function() {
+                    audio.play().catch(e => console.log('অডিও প্লে করতে সমস্যা:', e));
+                }, { once: true });
+            });
+        });
     </script>
 </body>
 </html>
