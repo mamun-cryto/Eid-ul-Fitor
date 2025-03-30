@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ঈদ মোবারক ২০২৪</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a1f2b;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+.message{
+  color: greenyellow;
+  border-start-end-radius: 50%;
+  box-shadow: 0 0 50px #FFD700;
+}
+        .moon {
+            width: 150px;
+            height: 150px;
+            background: url('moon.png') center/cover no-repeat;
+            border-radius: 50%;
+            box-shadow: 0 0 50px #FFD700;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        h1 {
+          box-shadow: 0 0 50px #FFD700
+            font-size: 2.5rem;
+            color: #FFD700;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+        }
+
+        .message {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            line-height: 1.7;
+            max-width: 500px;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #228B22, #32CD32);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin: 20px 0;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+.btn{
+  box-shadow: 0 0 50px #FFD700
+}
+        .btn:hover {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #006400;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .copyright {
+        
+          
+            margin-top: 40px;
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            display: flex;
+            box-shadow: 0 0 50px #FFD700
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fb-link {
+            display: inline-flex;
+            align-items: center;
+            color: #FFD700;
+            text-decoration: none;
+            margin-left: 10px;
+            transition: all 0.3s;
+        }
+
+        .fb-link:hover {
+            color: #3b5998;
+        }
+
+        .fb-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 5px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FFD700"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>') center/contain no-repeat;
+            transition: all 0.3s;
+        }
+
+        .fb-link:hover .fb-icon {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233b5998"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>') center/contain no-repeat;
+        }
+
+        /* মোবাইল রেস্পন্সিভ */
+        @media (max-width: 480px) {
+            h1 { font-size: 2rem; }
+            .moon { width: 120px; height: 120px; }
+            .message { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ব্যাকগ্রাউন্ড অডিও (অটোপ্লে) -->
+    <audio id="eidAudio" autoplay loop>
+        <source src="eid-special.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="moon"></div>
+    
+    <h1>ঈদ মোবারক!</h1>
+    
+    <div class="message">
+        পবিত্র ঈদুল ফিতরের শুভেচ্ছা। আল্লাহ তায়ালা আমাদের সকলকে এই পবিত্র দিনের বরকত দান করুন। 
+        ঈদের আনন্দ সবার জীবনে বয়ে আনুক সুখ, শান্তি ও সমৃদ্ধি।
+    </div>
+    
+    <div class="message">
+        পরিবার ও বন্ধুদের সাথে সময় কাটান, গরিব-দুঃখীর সাহায্য করুন। 
+        সকল ভুলত্রুটি ক্ষমা করে দিয়ে নতুন করে শুরু করুন।
+    </div>
+    
+    <a href="#" class="btn" onclick="copyLink()">
+        শুভেচ্ছা শেয়ার করুন
+    </a>
+    
+    <div class="copyright">
+        © ২০২৪ ঈদ মোবারক | © Mamun
+        <a href="https://facebook.com/hunterking42" class="fb-link" target="_blank">
+            <span class="fb-icon"></span>
+            <span></span>
+        </a>
+    </div>
+
+    <!-- তারা তৈরি (২০০টি তারা) -->
+    <script>
+        // তারা তৈরি
+        for (let i = 0; i < 200; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.width = `${Math.random() * 4 + 2}px`;
+            star.style.height = star.style.width;
+            star.style.animationDelay = `${Math.random() * 3}s`;
+            star.style.animationDuration = `${Math.random() * 2 + 1}s`;
+            document.body.appendChild(star);
+        }
+
+        // লিঙ্ক কপি ফাংশন
+        function copyLink() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url)
+                .then(() => alert('লিঙ্ক কপি করা হয়েছে! ঈদ মোবারক!'))
+                .catch(err => console.error('কপি করতে সমস্যা:', err));
+            return false;
+        }
+
+        // অডিও অটোপ্লে (মোবাইল ফ্রেন্ডলি)
+        document.addEventListener('click', function() {
+            const audio = document.getElementById('eidAudio');
+            audio.play().catch(e => console.log('অডিও প্লে করতে সমস্যা:', e));
+        }, { once: true });
+    </script>
+</body>
+</html>
